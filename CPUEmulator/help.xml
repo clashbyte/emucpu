@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<!-- Главная страница -->	
+<Page Title="Главная" Address="">
+	<p Size="16" Color="DarkGreen" Style="Bold">EmuCPU</p>
+	<p>Данная программа является симулятором вымышленного процессора и была разработана для изучения основ программирования на языке ассемблера.</p>
+	
+	<p Size="12" Color="DimGray" Style="Bold">Содержание</p>
+	<Links>
+		<a To="/syntax">Основы синтаксиса</a>
+		<a To="/calls">Инструкции</a>
+		<a To="/regs">Регистры</a>
+		<a To="/memory">Память</a>
+		<a To="/labels">Метки</a>
+		<a To="/flow">Управление выполнением</a>
+		<a To="/math">Математика</a>
+		<a To="/logic">Логика</a>
+		<a To="/stack">Работа со стеком</a>
+	</Links>
+
+	<p Size="12" Color="DimGray" Style="Bold">Помощь</p>
+	<Links>
+		<a To="/inst">Инструкции - по названию</a>
+		<a To="/instd">Инструкции - по описанию</a>
+		<a To="/converter">Конвертер</a>
+		<a To="/about">О программе</a>
+	</Links>
+
+	<!-- Страница описания синтаксиса -->
+	<Page Title="Синтаксис" Address="syntax">
+		<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+		<p>В основном, синтаксис эмулятора практически не отличается от синтаксиса "взрослых" ассемблеров, таких как TASM, FASM, MASM и др. Каждая строка программы на данном языке подходит под следующий шаблон:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">[.метка] инструкция [аргумент[, аргумент]] [; комментарий]</p>
+		<p>В квадратных скобках указаны необязательные части строки. Таким образом, строка делится на метку, инструкцию, операторы и комментарий.</p>
+		<p>Метка используется для перехода к любой строке. Подробнее о метках написано на отдельной странице.</p>
+		<p>Инструкция - можно сказать самая главная часть всего языка. Она обозначает некоторое действие, которое должен выполнить наш процессор. Для входных и выходных данных инструкции используются аргументы.</p>
+		<p>Аргументы представляют собой числа, имена регистров или ссылки на метки. В зависимости от инструкции, количество аргументов может варьироваться и является фиксированным для данной инструкции, таким образом мы не можем, например, в инструкцию add передать три аргумента вместо двух - интерпретатор выведет ошибку.</p>
+		<Links>
+			<a To="/calls">Далее - Инструкции</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Инструкции -->
+	<Page Title="Инструкции" Address="calls">
+		<p Size="12" Color="DimGray" Style="Bold">Инструкции</p>
+		<p>Для выполнения каких-либо действий используются инструкции. Так как всё лучше объясняется наглядно, приведем пример перемещения значения из одного регистра в другой:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">mov R1, R2</p>
+		<p>Таким образом, сначала указывается имя выполняемой инструкции - в нашем случае это инструкция mov. Далее, через запятую указываются аргументы - в примере это имена регистров, R1 и R2 (их имена можно увидеть справа на панели данных).</p>
+		<p>При необходимости, на строку можно добавить комментарий. Для этого, ставится символ точки с запятой (;) или же символ диеза (#), после чего всё содержимое строки, следующее за любым из этих символов, игнорируется.</p>
+		<p>Также, для наглядности можно рассмотреть другой пример - инструкция завершения работы программы:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">end    ; Конец программы</p>
+		<p>Видно, что команда не имеет аргументов, и их следует просто-напросто не указывать.</p>
+		<Links>
+			<a To="/regs">Далее - Регистры</a>
+			<a To="/syntax">Назад - Синтаксис</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Регистры -->
+	<Page Title="Регистры" Address="regs">
+		<p Size="12" Color="DimGray" Style="Bold">Регистры</p>
+		<p>Одним из самых важных частей процессора, помимо инструкций, являются регистры. Если вы знакомы с языками программирования или же просто с математикой, их можно назвать другим словом - переменные. Разница лишь в том, что их количество фиксировано и их имена предопределены, что не позволяет нам создавать новые регистры под свои нужды.</p>
+		<p>Несмотря на то, что настоящие процессоры имеют всего 4 основных регистра (EAX, EBX, ECX, EDX), наш вымышленный процессор поддерживает 7 обычных регистров и 2 регистра ввода-вывода. Значения всех регистров можно увидеть на странице "Данные" в правой части редактора. Кроме того, если выполнение находится на паузе, значение любого из регистров можно изменить двойным кликом.</p>
+		<p>Все регистры учебного процессора имеют псевдонимы для удобства работы с ними. Для каждого регистра есть псевдоним Rn, где n - номер регистра, от 1 до 9 (получаем R1, R2, R6 и т.д.) Кроме того, имеются псевдонимы в виде регистров настоящих процессоров (то бишь EAX, EBX, EDX - EnX с порядковой буквой вместо n).</p>
+		<p>Регистры R8 и R9 также имеют псевдонимы IN и OUT, так как они являются связующим звеном для работы с памятью.</p>
+		<p Style="Bold">Регистр IN недоступен для записи, любые попытки присвоения в данный регистр вызовут ошибку!</p>
+		<p>Связано это с тем, что в данный регистр будут поступать данные из ячеек памяти при запросе на её чтение. Регистр OUT отвечает за то значение, которое будет занесено в память при запросе записи.</p>
+		<p>Самой частой инструкцией по работе с регистрами является команда mov - она копирует значение из одного регистра в другой.</p>
+		<p>Также, следует напомнить, что при старте и при завершении программы, все регистры обнуляются, следовательно несохранённые данные будут потеряны.</p>
+		<Links>
+			<a To="/memory">Далее - Память</a>
+			<a To="/calls">Назад - Инструкции</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Память -->
+	<Page Title="Память" Address="memory">
+		<p Size="12" Color="DimGray" Style="Bold">Память</p>
+		<p>Вы сочтёте меня сумасшедшим, но если меня спросят, что же всё-таки самое главное в процессоре - я смело отвечу, что память и ввод-вывод. Ведь это именно то, что реализует ключевой аспект работы любого оборудования - коммуникацию с пользователем.</p>
+		<p>Для работы с памятью процессор имеет 2 команды (если быть честным, то 4, но об этом ниже) - write и read. Нетрудно догадаться, что первая из них записывает значение в память, другая же читает, однако всё не так просто.</p>
+		<p>Первое, что должна сделать программа - получить входные данные от пользователя, а именно использовать команду read с одним аргументом - номером ячейки памяти для чтения:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">read 5</p>
+		<p>Данная операция присвоит в регистр IN значение из ячейки памяти 5.</p>
+		<p Style="Bold">Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!</p>
+		<p>Для реализации записи в память существует инструкция write, которая отличается лишь тем, что работает с регистром OUT. Любое значение, находящееся в регистре OUT, будет занесено в ячейку памяти, указанную в виде номерного аргумента.</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">inc R1[n]mov R1, OUT[n]write 7</p>
+		<p>Данный код запишет запишет единицу в ячейку памяти под номером 7.</p>
+		<p>Как было сказано выше, существуют ещё две команды - peek и poke, которые вместо конкретного номера ячейки принимают регистр, содержащий в себе индекс требуемой ячейки (от 1 до 99, иначе будет выдана ошибка).</p>
+		<Links>
+			<a To="/labels">Далее - Метки</a>
+			<a To="/regs">Назад - Регистры</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Метки -->
+	<Page Title="Метки" Address="labels">
+		<p Size="12" Color="DimGray" Style="Bold">Метки и переходы</p>
+		<p>Все программы были бы достаточно простыми и прямолинейными, если бы не "прыжки" по меткам в коде. Если говорить кратко, то метка - это что-то вроде книжной закладки между инструкциями, которая позволяет совершить переход к инструкции, следующей сразу за ней.</p>
+		<p>Для того, чтобы объявить метку, требуется просто поставить точку (.), после чего, без пробелов и посторонних знаков, написать её имя латинскими буквами. Следует помнить, что компилятор является регистронезависимым, поэтому</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">.label[n].LABEL[n].LaBeL</p>
+		<p>являются одной и той же меткой, следовательно, Вы получите ошибку, гласящую о том, что данное имя метки уже было использовано ранее.</p>
+		<p>Для перехода по меткам используются две инструкции - безусловная ( jmp ) и условная ( jif ). Для того, чтобы указать метку для перехода, необходимо написать знак собаки (@), и далее имя метки без точки. Таким образом, чтобы совершить переход на указанную метку, мы должны написать:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">.label[n]jmp @label</p>
+		<p>Закроем глаза на то, что это образует бесконечный цикл, ведь нам главное понять принцип работы меток и переходов. Как видно из примера, как только интерпретатор встречает команду jmp, он сразу же переходит к инструкции, следующей после указанной метки.</p>
+		<p>Если же вспомнить про оператор условного перехода jif, то его отличие от jmp только в том, что он совершает прыжок только в том случае, если в регистре R1 (или EAX, или REG1, как удобнее Вам, ведь по сути это один и тот же первый регистр), находится значение больше нуля. </p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">inc R1[n]inc R1[n].label[n]dec R1[n]jif @label</p>
+		<p>В первом проходе данного примера jif сработает, так как после декремента в R1 окажется единица, а вот второй раз уже нет, так как декремент снизит R1 с единицы до нуля.</p>
+		<Links>
+			<a To="/flow">Далее - Управление выполнением</a>
+			<a To="/memory">Назад - Память</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Управление выполнением -->
+	<Page Title="Управление выполнением" Address="flow">
+		<p Size="12" Color="DimGray" Style="Bold">Управление выполнением</p>
+		<p>Данная секция не такая обширная и интересная, как остальные, так как назначение её инструкций достаточно примитивное. Первая из них - end. Эта инструкция заставляет интерпретатор немедленно прекратить выполнение программы. Если она встретится в программе без логического ветвления, всё, что находится после неё, будет фактически проигнорировано.</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">inc R1  ; Инкремент выполнится[n]end[n]inc R1  ; Инкремент не сработает</p>
+		<p>Другая же инструкция из данной категории - инструкция brk. Она, как и end, не принимает параметров, но когда интерпретатор доходит до неё, вместо прекращения выполнения он ставит паузу, что позволяет посмотреть или изменить значения регистров, стека и памяти.</p>
+		<Links>
+			<a To="/math">Далее - Математика</a>
+			<a To="/labels">Назад - Метки</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Математика -->
+	<Page Title="Математика" Address="math">
+		<p Size="12" Color="DimGray" Style="Bold">Математика</p>
+		<p Size="8" Color="Gray" Style="Italic">Один из самых больших разделов инструкций, второй - логика</p>
+		<p>Математика - царица наук, и по совместительству главная задача любой вычислительной машины. Наш процессор - не исключение, поэтому он реализует огромное количество математических инструкций, исключая только разве что геометрические функции, как например взятие синуса или косинуса.</p>
+		<p>Большая часть математических инструкций принимают два регистра, производят необходимую операцию, и записывают результат в регистр, идущий первым в списке аргументов:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">read 1[n]mov IN, R4[n]read 2[n]mov IN, R5[n]add R4, R5</p>
+		<p>Эта простая программа прочитает данные из двух ячеек памяти, переместит значения в регистры R4 и R5, и после произведет сложение указанных регистров, сохранив результат в регистр R4, так как он указан первым.</p>
+		<p>С унарными же операциями всё гораздо проще - они принимают один регистр, и результат записывают в него же. Таким образом, знакомая нам по ранее приведенным примерам, инструкция inc как раз-таки является простейшей математической инструкцией, прибавляющей единицу к значению указанному регистру, сохраняя результат в него же.</p>
+		
+		<p>Подробнее со всеми доступными математическими инстркциями можно ознакомиться в перечнях инструкций:</p>
+		<Links>
+			<a To="/inst">Инструкции - по названию</a>
+			<a To="/instd">Инструкции - по описанию</a>
+		</Links>
+		<Links>
+			<a To="/logic">Далее - Логика</a>
+			<a To="/flow">Назад - Управление выполнением</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Логика -->
+	<Page Title="Логика" Address="logic">
+		<p Size="12" Color="DimGray" Style="Bold">Логика</p>
+		<p Size="8" Color="Gray" Style="Italic">Один из самых больших разделов инструкций, второй - математика</p>
+		<p>После простейших математических операций, наш процессор может так же сравнивать полученные результаты. Для этого существует целый ряд логически-сравнительных инструкций. Все они, как и математические, принимают в качестве параметров один или два регистра, записывая ответ в тот, что стоит первым в списке аргументов.</p>
+		<p>Например, для того, чтобы проверить, не равны ли числа, мы используем следующую конструкцию:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">neq R3, R2</p>
+		<p>Результат выполнения будет таков, что в регистр R3 запишется единица, если два числа в регистрах не равны, иначе же ноль.</p>
+		<p>Унарная логическая инструкция всего одна - это инструкция not. Нетрудно догадаться, что она просто инвертирует логическое значение в регистре.</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">not R6</p>
+		<p>Если в регистре R6 было значение больше нуля, он станет равным нулю, иначе же единице.</p>
+		<p>Подробнее со всеми доступными математическими инстркциями можно ознакомиться в перечнях инструкций:</p>
+		<Links>
+			<a To="/inst">Инструкции - по названию</a>
+			<a To="/instd">Инструкции - по описанию</a>
+		</Links>
+		<Links>
+			<a To="/stack">Далее - Стек</a>
+			<a To="/math">Назад - Математика</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Стек -->
+	<Page Title="Стек" Address="stack">
+		<p Size="12" Color="DimGray" Style="Bold">Стек</p>
+		<p>Как и в настоящих процессорах, в нашем имеется стек.</p>
+		<p>Проще всего стек можно представить в виде магазина от пистолета, только вместо пуль мы "заряжаем" и извлекаем из него числа.</p>
+		<p>Для того, чтобы занести значение регистра в стек, используется инструкция push, которая принимает только один параметр - регистр, из которого необходимо прочитать и сохранить значение:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">push R1</p>
+		<p>Результат выполнения сразу же отобразится в списке "Стек" под значениями регистров в правой части окна эмулятора.</p>
+		<p>Для извлечения из стека используется команда pop, которая так же принимает регистр для записи:</p>
+		<p Font="Courier New" Size="8" Color="MidnightBlue">pop R4</p>
+		<p>Содержимое верхней ячейки извлечется в регистр R4, сократив размер стека на один.</p>
+		<p Style="Bold">Стек ограничен 16 ячейками, при попытке записать в него большее количество значений, интерпретатор выдаст ошибку! Также, ошибка будет выведена при попытке прочитать значение из пустого стека!</p>
+		<Links>
+			<a To="/logic">Назад - Логика</a>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- Инструкции -->
+	<Page Title="Инструкции по названию" Address="inst">
+		
+		<p Size="12" Color="DimGray" Style="Bold">Инструкции по названию</p>
+		<Links>
+			<a To="/instd">К списку по описанию</a>
+			<a To="/">На главную</a>
+		</Links>
+		
+		<p Size="10" Color="DimGray" Style="Bold">Работа с регистрами</p>
+		<Links>
+			<a To="/inst/mov">mov [регистр], [регистр]</a>
+			<a To="/inst/inc">inc [регистр]</a>
+			<a To="/inst/dec">dec [регистр]</a>
+			<a To="/inst/one">one [регистр]</a>
+			<a To="/inst/nul">nul [регистр]</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Ввод-вывод</p>
+		<Links>
+			<a To="/inst/write">write [число]</a>
+			<a To="/inst/read">read [число]</a>
+			<a To="/inst/poke">poke [регистр]</a>
+			<a To="/inst/peek">peek [регистр]</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Переходы</p>
+		<Links>
+			<a To="/inst/jmp">jmp [@метка]</a>
+			<a To="/inst/jif">jif [@метка]</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Математика</p>
+		<Links>
+			<a To="/inst/add">add [регистр], [регистр]</a>
+			<a To="/inst/sub">sub [регистр], [регистр]</a>
+			<a To="/inst/mul">mul [регистр], [регистр]</a>
+			<a To="/inst/div">div [регистр], [регистр]</a>
+			<a To="/inst/mod">mod [регистр], [регистр]</a>
+			<a To="/inst/pow">pow [регистр], [регистр]</a>
+			<a To="/inst/neg">neg [регистр]</a>
+			<a To="/inst/abs">abs [регистр]</a>
+			<a To="/inst/sgn">sgn [регистр]</a>
+			<a To="/inst/sqrt">sqrt [регистр]</a>
+			<a To="/inst/flr">flr [регистр]</a>
+			<a To="/inst/cel">cel [регистр]</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Логика</p>
+		<Links>
+			<a To="/inst/eq">eq [регистр], [регистр]</a>
+			<a To="/inst/neq">neq [регистр], [регистр]</a>
+			<a To="/inst/grt">grt [регистр], [регистр]</a>
+			<a To="/inst/lss">lss [регистр], [регистр]</a>
+			<a To="/inst/geq">geq [регистр], [регистр]</a>
+			<a To="/inst/leq">leq [регистр], [регистр]</a>
+			<a To="/inst/and">and [регистр], [регистр]</a>
+			<a To="/inst/or">or [регистр], [регистр]</a>
+			<a To="/inst/not">not [регистр]</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Стек</p>
+		<Links>
+			<a To="/inst/push">push [регистр]</a>
+			<a To="/inst/pop">pop [регистр]</a>
+		</Links>
+	
+
+		<!-- Инструкции регистров -->
+		<Page Title="mov" Address="mov">
+			<p Size="16" Color="MidnightBlue" Style="Bold">mov</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">mov регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Данная инструкция копирует значение из первого указанного регистра во второй.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="inc" Address="inc">
+			<p Size="16" Color="MidnightBlue" Style="Bold">inc</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">inc регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Данная инструкция увеличивает значение указанного регистра на единицу.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="dec" Address="dec">
+			<p Size="16" Color="MidnightBlue" Style="Bold">dec</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">dec регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Данная инструкция уменьшает значение указанного регистра на единицу.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="one" Address="one">
+			<p Size="16" Color="MidnightBlue" Style="Bold">one</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">one регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Устанавливает значение указанного регистра в единицу.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="nul" Address="nul">
+			<p Size="16" Color="MidnightBlue" Style="Bold">nul</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">nul регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Устанавливает значение указанного регистра в ноль.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+	
+		<!-- Инструкции памяти -->
+		<Page Title="read" Address="read">
+			<p Size="16" Color="MidnightBlue" Style="Bold">read</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">read число</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Читает значение из ячейки памяти с указанным индексом в регистр IN.</p>
+			<p Style="Bold">Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="write" Address="write">
+			<p Size="16" Color="MidnightBlue" Style="Bold">write</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">write число</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Записывает значение из регистра OUT в указанную ячейку памяти.</p>
+			<p Style="Bold">Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="peek" Address="peek">
+			<p Size="16" Color="MidnightBlue" Style="Bold">peek</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">peek регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Читает значение из ячейки памяти, хранящейся в указанном регистре, в регистр IN.</p>
+			<p Style="Bold">Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="poke" Address="poke">
+			<p Size="16" Color="MidnightBlue" Style="Bold">poke</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">poke число</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Записывает значение из регистра OUT в ячейку памяти, индекс которой хранится в указанном регистре.</p>
+			<p Style="Bold">Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+	
+		<!-- Переходы -->
+		<Page Title="jmp" Address="jmp">
+			<p Size="16" Color="MidnightBlue" Style="Bold">jmp</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">jmp @метка</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Совершает безусловный переход к указанной метке.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="jif" Address="jif">
+			<p Size="16" Color="MidnightBlue" Style="Bold">jif</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">jif @метка</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Совершает переход к указанной метке только в том случае, если регистр R1 содержит значение больше нуля.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+	
+		<!-- Математика -->
+		<Page Title="add" Address="add">
+			<p Size="16" Color="MidnightBlue" Style="Bold">add</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">add регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Производит сложение значений двух регистров, сохраняя результат в первый указанный регистр.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="sub" Address="sub">
+			<p Size="16" Color="MidnightBlue" Style="Bold">sub</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">sub регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Производит вычитание значений двух регистров, сохраняя результат в первый указанный регистр.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="mul" Address="mul">
+			<p Size="16" Color="MidnightBlue" Style="Bold">mul</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">mul регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Производит умножение значений двух регистров, сохраняя результат в первый указанный регистр.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="div" Address="div">
+			<p Size="16" Color="MidnightBlue" Style="Bold">div</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">div регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Производит деление одного регистра на другой, сохраняя результат в первый указанный регистр.</p>
+			<p Style="Bold">Если второй указанный регистр содержит нулевое значение, интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="mod" Address="mod">
+			<p Size="16" Color="MidnightBlue" Style="Bold">mod</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">mod регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Производит деление одного регистра на другой, сохраняя остаток от деления в первый указанный регистр.</p>
+			<p Style="Bold">Если второй указанный регистр содержит нулевое значение, интерпретатор выдаст ошибку!</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="pow" Address="pow">
+			<p Size="16" Color="MidnightBlue" Style="Bold">pow</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">pow регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Возводит первый регистр в степень, хранящуюся во втором регистре, сохраняя результат в первый указанный регистр.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="neg" Address="neg">
+			<p Size="16" Color="MidnightBlue" Style="Bold">neg</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">neg регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Меняет знак числа, хранящегося в указанном регистре, сохраняя результат в него же.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="abs" Address="abs">
+			<p Size="16" Color="MidnightBlue" Style="Bold">abs</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">abs регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Находит модуль числа (делает любое отрицательное число положительным), хранящегося в указанном регистре, сохраняя результат в него же.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="sgn" Address="sgn">
+			<p Size="16" Color="MidnightBlue" Style="Bold">sgn</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">sgn регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Вычисляет знак числа, хранящегося в указанном регистре, сохраняя результат в него же. Если в регистре число было больше или равно нулю, в регистр занесется 1, иначе -1.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="sqrt" Address="sqrt">
+			<p Size="16" Color="MidnightBlue" Style="Bold">sqrt</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">sqrt регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Извлекает квадратный корень из числа, хранящегося в указанном регистре, сохраняя результат в него же.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="flr" Address="flr">
+			<p Size="16" Color="MidnightBlue" Style="Bold">flr</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">flr регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Округляет значение регистра до целого, находящегося перед данным дробным числом (округление вниз).</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="cel" Address="cel">
+			<p Size="16" Color="MidnightBlue" Style="Bold">cel</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">cel регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Округляет значение регистра до целого, находящегося после данного дробного числа (округление вверх).</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+
+		<!-- Логика -->
+		<Page Title="eq" Address="eq">
+			<p Size="16" Color="MidnightBlue" Style="Bold">eq</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">eq регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если два значения в указанных регистрах равны, устанавливает первый указанный регистр в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="neq" Address="neq">
+			<p Size="16" Color="MidnightBlue" Style="Bold">neq</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">neq регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если два значения в указанных регистрах не равны, устанавливает первый указанный регистр в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="grt" Address="grt">
+			<p Size="16" Color="MidnightBlue" Style="Bold">grt</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">grt регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если значение первого указанного регистра больше значения второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="geq" Address="geq">
+			<p Size="16" Color="MidnightBlue" Style="Bold">geq</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">geq регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если значение первого указанного регистра больше или равно значению второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="lss" Address="lss">
+			<p Size="16" Color="MidnightBlue" Style="Bold">lss</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">lss регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если значение первого указанного регистра меньше значения второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="leq" Address="leq">
+			<p Size="16" Color="MidnightBlue" Style="Bold">leq</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">leq регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Если значение первого указанного регистра меньше или равно значению второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="and" Address="and">
+			<p Size="16" Color="MidnightBlue" Style="Bold">and</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">and регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Логическое "И". Если значение обоих регистров больше нуля, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="or" Address="or">
+			<p Size="16" Color="MidnightBlue" Style="Bold">or</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">or регистр, регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Логическое "ИЛИ". Если значение любого из указанных регистров больше нуля, первый указанный регистр устанавливается в 1, иначе в 0.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="not" Address="not">
+			<p Size="16" Color="MidnightBlue" Style="Bold">not</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">not регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Логическое отрицание ("НЕ"). Если в регистре значение больше нуля, в него записывается 0, иначе 1.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		
+		<!-- Стек -->
+		<Page Title="push" Address="push">
+			<p Size="16" Color="MidnightBlue" Style="Bold">push</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">push регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Заносит число, содержащееся в регистре, в стек.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+		<Page Title="pop" Address="pop">
+			<p Size="16" Color="MidnightBlue" Style="Bold">pop</p>
+			<p Size="12" Color="DimGray" Style="Bold">Синтаксис</p>
+			<p Font="Courier New" Size="8" Color="MidnightBlue">pop регистр</p>
+			<p Size="12" Color="DimGray" Style="Bold">Описание</p>
+			<p>Извлекает последнее занесенное в стек число и записывает его в указанный регистр.</p>
+			<Links>
+				<a To="/inst">К списку</a>
+				<a To="/">На главную</a>
+			</Links>
+		</Page>
+
+	</Page>
+	
+	<!-- Инструкции по описанию -->
+	<Page Title="Инструкции по описанию" Address="instd">
+		
+		<p Size="12" Color="DimGray" Style="Bold">Инструкции по описанию</p>
+		<Links>
+			<a To="/inst">К списку по названию</a>
+			<a To="/">На главную</a>
+		</Links>
+		
+		<p Size="10" Color="DimGray" Style="Bold">Работа с регистрами</p>
+		<Links>
+			<a To="/inst/mov">Перемещение регистр-регистр</a>
+			<a To="/inst/inc">Инкремент (увеличение на 1)</a>
+			<a To="/inst/dec">Декремент (уменьшение на 1)</a>
+			<a To="/inst/one">Установка регистра в единицу</a>
+			<a To="/inst/nul">Установка регистра в ноль</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Ввод-вывод</p>
+		<Links>
+			<a To="/inst/write">Запись в ячейку памяти</a>
+			<a To="/inst/read">Чтение из ячейки памяти</a>
+			<a To="/inst/poke">Запись в ячейку по адресу в регистре</a>
+			<a To="/inst/peek">Чтение из ячейки по адресу в регистре</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Переходы</p>
+		<Links>
+			<a To="/inst/jmp">Безусловный переход</a>
+			<a To="/inst/jif">Условный переход</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Математика</p>
+		<Links>
+			<a To="/inst/add">Сложение</a>
+			<a To="/inst/sub">Вычитание</a>
+			<a To="/inst/mul">Умножение</a>
+			<a To="/inst/div">Деление</a>
+			<a To="/inst/mod">Остаток от деления</a>
+			<a To="/inst/pow">Возведение в степень</a>
+			<a To="/inst/neg">Смена знака числа</a>
+			<a To="/inst/abs">Модуль числа</a>
+			<a To="/inst/sgn">Получение знака числа</a>
+			<a To="/inst/sqrt">Квадратный корень</a>
+			<a To="/inst/flr">Округление вниз</a>
+			<a To="/inst/cel">Округление вверх</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Логика</p>
+		<Links>
+			<a To="/inst/eq">Равенство значений</a>
+			<a To="/inst/neq">Неравенство значений</a>
+			<a To="/inst/grt">Больше</a>
+			<a To="/inst/lss">Меньше</a>
+			<a To="/inst/geq">Больше или равно</a>
+			<a To="/inst/leq">Меньше или равно</a>
+			<a To="/inst/and">Логическое "И"</a>
+			<a To="/inst/or">Логическое "ИЛИ"</a>
+			<a To="/inst/not">Логическое "НЕ"</a>
+		</Links>
+	
+		<p Size="10" Color="DimGray" Style="Bold">Стек</p>
+		<Links>
+			<a To="/inst/push">Добавление в стек</a>
+			<a To="/inst/pop">Извлечение из стека</a>
+		</Links>
+	</Page>
+	
+	<!-- Конвертер -->
+	<Page Title="Конвертер" Address="converter">
+		<p Size="12" Color="DimGray" Style="Bold">Конвертер</p>
+		<p>Простой инструмент, который поможет сконвертировать трёхциферные коды от старой программы в ассемблерные коды.</p>
+		<Links>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+
+	<!-- О программе -->
+	<Page Title="О программе" Address="about">
+		<p Size="12" Color="DimGray" Style="Bold">О программе</p>
+		<p Style="Bold">Разработка программы:</p>
+		<p>студент группы ИСа-151[n]Попов Михаил</p>
+		<p></p>
+		<p>Программа написана на языке C# в декабре 2016 года. Все исходные коды программы можно найти в репозитории на сайте GitHub:</p>
+		<Links>
+			<a To="https://github.com/clashbyte/emucpu">Репозиторий на GitHub</a>
+		</Links>
+		<p>Разработано под чутким руководством Евгения Ивановича Коденцева и Юрия Петровича Преображенского, преподавателей Воронежского института высоких технологий.</p>
+		<Links>
+			<a To="/">На главную</a>
+		</Links>
+	</Page>
+</Page>
