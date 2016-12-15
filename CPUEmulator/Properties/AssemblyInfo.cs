@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CPUEmulator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("EmuCPU")]
+[assembly: AssemblyDescription("Эмулятор процессора")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CPUEmulator")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("ClashByte")]
+[assembly: AssemblyProduct("EmuCPU")]
+[assembly: AssemblyCopyright("Copyright © ClashByte 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
