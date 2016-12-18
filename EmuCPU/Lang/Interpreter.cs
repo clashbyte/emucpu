@@ -104,6 +104,7 @@ namespace EmuCPU.Lang {
 			Registers.Changed += Registers_Changed;
 			Data.Changed += Data_Changed;
 			Stack.Changed += Stack_Changed;
+			Revert();
 		}
 
 
@@ -124,6 +125,7 @@ namespace EmuCPU.Lang {
 		/// </summary>
 		public void Start() {
 			State = MachineState.Running;
+			Revert();
 			if (StateChanged != null) {
 				StateChanged(this, EventArgs.Empty);
 			}
@@ -147,18 +149,22 @@ namespace EmuCPU.Lang {
 			if (StateChanged != null) {
 				StateChanged(this, EventArgs.Empty);
 			}
-			Pointer = CommandLen = CommandPos = 0;
-			for (int i = 0; i < 9; i++) {
-				Registers[i] = 0;
-			}
-			Stack.Clear();
+			Revert();
 		}
 
 		/// <summary>
 		/// Один шаг вперед
 		/// </summary>
 		public Error StepForward() {
-			if (State == MachineState.Paused) {
+			if (State != MachineState.Running) {
+				if (State == MachineState.Stopped) {
+					Revert();
+				}
+				State = MachineState.Paused;
+
+				if (StateChanged != null) {
+					StateChanged(this, EventArgs.Empty);
+				}
 				return Update(1);
 			}
 			return null;
@@ -193,6 +199,7 @@ namespace EmuCPU.Lang {
 					while (invokeCount > 0) {
 						if (Pointer < Program.Bytecode.Length) {
 							Compiler.Invocation inv = Program.Bytecode[Pointer];
+							MachineState mst = State;
 							try {
 								RunCommand(inv);
 							} catch (Exception ex) {
@@ -201,7 +208,10 @@ namespace EmuCPU.Lang {
 								return new Error(ex.Message, inv.CallingInstruction.Position, inv.CallingInstruction.Length);
 							}
 							Pointer++;
-							if (State != MachineState.Running) {
+							if (State != mst) {
+								if (StateChanged != null) {
+									StateChanged(this, EventArgs.Empty);
+								}
 								break;
 							}
 						} else {
@@ -223,6 +233,17 @@ namespace EmuCPU.Lang {
 			CommandPos = inv.CallingInstruction.Position;
 			CommandLen = inv.CallingInstruction.Length;
 			inv.CallingInstruction.Execute(this, inv.Name, inv.Operands);
+		}
+
+		/// <summary>
+		/// Восстановление в начальное состояние
+		/// </summary>
+		void Revert() {
+			for (int i = 0; i < 9; i++) {
+				Registers[i] = 0;
+			}
+			Stack.Clear();
+			Pointer = CommandLen = CommandPos = 0;
 		}
 
 		/// <summary>

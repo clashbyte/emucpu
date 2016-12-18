@@ -205,14 +205,27 @@ namespace EmuCPU.Forms {
 		/// Пересоздание интерпретатора
 		/// </summary>
 		void ResetInterpreter() {
+			
+			// Остановка прежнего интерпретатора
 			if (interpreter != null) {
 				interpreter.Stop();
+
+				// Очистка памяти
+				for (int i = 0; i < 100; i++) {
+					if (interpreter.Data[i] != 0) {
+						interpreter.Data[i] = 0;
+					}
+				}
 			}
+
+			// Создание нового интерпретатора
 			interpreter = new Interpreter();
 			interpreter.StateChanged += interpreter_StateChanged;
 			interpreter.RegisterChanged += interpreter_RegisterChanged;
 			interpreter.DataChanged += interpreter_DataChanged;
 			interpreter.StackChanged += interpreter_StackChanged;
+			
+			
 		}
 
 		/// <summary>
@@ -358,6 +371,16 @@ namespace EmuCPU.Forms {
 		/// Один шаг вперед
 		/// </summary>
 		void toolStripAdvance_Click(object sender, EventArgs e) {
+			
+			// Обновление кода
+			if (interpreter.State == Interpreter.MachineState.Stopped) {
+				if (!interpreter.LoadProgram(editor.Text)) {
+					MessageBox.Show("В программе обнаружены синтаксические\nошибки, запуск невозможен.", "Проблема запуска", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
+				}
+			}
+
+			// Шаг вперед
 			Interpreter.Error err = interpreter.StepForward();
 			if (err != null) {
 				MessageBox.Show("Произошла ошибка выполнения:\n" + err.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -394,7 +417,7 @@ namespace EmuCPU.Forms {
 			toolStripPlay.Visible = menuPlay.Visible = interpreter.State == Interpreter.MachineState.Stopped;
 			toolStripContinue.Visible = menuContinue.Visible = interpreter.State == Interpreter.MachineState.Paused;
 			toolStripPause.Visible = menuPause.Visible = interpreter.State == Interpreter.MachineState.Running;
-			toolStripAdvance.Visible = menuAdvance.Visible = interpreter.State == Interpreter.MachineState.Paused;
+			toolStripAdvance.Visible = menuAdvance.Visible = interpreter.State != Interpreter.MachineState.Running;
 			toolStripStop.Visible = menuStop.Visible = interpreter.State != Interpreter.MachineState.Stopped;
 			if (itemEditBox!=null) {
 				itemEditBox_LostFocus(null, null);

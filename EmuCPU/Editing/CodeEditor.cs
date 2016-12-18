@@ -140,7 +140,7 @@ namespace EmuCPU.Editing {
 			
 			// Инициализация таймера
 			parseTimer = new Timer();
-			parseTimer.Interval = 500;
+			parseTimer.Interval = 200;
 			parseTimer.Tick += parseTimer_Tick;
 
 			// Сохранение лексера
@@ -150,7 +150,7 @@ namespace EmuCPU.Editing {
 			editor = new Scintilla();
 			editor.Dock = DockStyle.Fill;
 			editor.BorderStyle = BorderStyle.Fixed3D;
-			editor.MouseDwellTime = 600;
+			editor.MouseDwellTime = 400;
 			parent.Controls.Add(editor);
 
 			// Настройка параметров редактора

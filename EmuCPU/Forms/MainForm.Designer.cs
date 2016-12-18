@@ -178,7 +178,7 @@
 			// 
 			this.menuUndo.Image = ((System.Drawing.Image)(resources.GetObject("menuUndo.Image")));
 			this.menuUndo.Name = "menuUndo";
-			this.menuUndo.Size = new System.Drawing.Size(152, 22);
+			this.menuUndo.Size = new System.Drawing.Size(133, 22);
 			this.menuUndo.Text = "Отменить";
 			this.menuUndo.Click += new System.EventHandler(this.toolStripUndo_Click);
 			// 
@@ -186,7 +186,7 @@
 			// 
 			this.menuRedo.Image = ((System.Drawing.Image)(resources.GetObject("menuRedo.Image")));
 			this.menuRedo.Name = "menuRedo";
-			this.menuRedo.Size = new System.Drawing.Size(152, 22);
+			this.menuRedo.Size = new System.Drawing.Size(133, 22);
 			this.menuRedo.Text = "Повторить";
 			this.menuRedo.Click += new System.EventHandler(this.toolStripRedo_Click);
 			// 
@@ -250,7 +250,6 @@
 			this.menuAdvance.Name = "menuAdvance";
 			this.menuAdvance.Size = new System.Drawing.Size(144, 22);
 			this.menuAdvance.Text = "Шаг вперед";
-			this.menuAdvance.Visible = false;
 			this.menuAdvance.Click += new System.EventHandler(this.toolStripAdvance_Click);
 			// 
 			// menuStop
@@ -378,7 +377,6 @@
 			this.toolStripAdvance.Name = "toolStripAdvance";
 			this.toolStripAdvance.Size = new System.Drawing.Size(90, 22);
 			this.toolStripAdvance.Text = "Шаг вперед";
-			this.toolStripAdvance.Visible = false;
 			this.toolStripAdvance.Click += new System.EventHandler(this.toolStripAdvance_Click);
 			// 
 			// toolStripPause
