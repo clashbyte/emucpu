@@ -86,6 +86,11 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpData.resx</DependentUpon>
+    </Compile>
     <Compile Include="Lang\Attributes\AsmCompileAttribute.cs" />
     <Compile Include="Lang\Compiler.cs" />
     <Compile Include="Lang\Instructions\CompareInstruction.cs" />
@@ -110,6 +115,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HelpData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

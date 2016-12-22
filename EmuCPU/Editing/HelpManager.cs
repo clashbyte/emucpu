@@ -64,7 +64,11 @@ namespace EmuCPU.Editing {
 			if (!DesignMode) {
 				XmlDocument helpDoc = new XmlDocument();
 				try {
-					helpDoc.Load("help.xml");
+					#if DEBUG
+						helpDoc.Load("help.xml");
+					#else
+						helpDoc.LoadXml(HelpData.Content);
+					#endif
 					foreach (XmlNode el in helpDoc.ChildNodes) {
 						if (el.Name.ToLower() == "page") {
 							BasePage = RecursiveParse(el, "");

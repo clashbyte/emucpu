@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt; 
+
+&lt;!-- Главная страница --&gt;	
+&lt;Page Title="Главная" Address=""&gt;
+	&lt;p Size="16" Color="DarkGreen" Style="Bold"&gt;EmuCPU&lt;/p&gt;
+	&lt;p&gt;Данная программа является симулятором вымышленного процессора и была разработана для изучения основ программирования на языке ассемблера.&lt;/p&gt;
+	
+	&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Содержание&lt;/p&gt;
+	&lt;Links&gt;
+		&lt;a To="/syntax"&gt;Основы синтаксиса&lt;/a&gt;
+		&lt;a To="/calls"&gt;Инструкции&lt;/a&gt;
+		&lt;a To="/regs"&gt;Регистры&lt;/a&gt;
+		&lt;a To="/memory"&gt;Память&lt;/a&gt;
+		&lt;a To="/labels"&gt;Метки&lt;/a&gt;
+		&lt;a To="/flow"&gt;Управление выполнением&lt;/a&gt;
+		&lt;a To="/math"&gt;Математика&lt;/a&gt;
+		&lt;a To="/logic"&gt;Логика&lt;/a&gt;
+		&lt;a To="/stack"&gt;Работа со стеком&lt;/a&gt;
+	&lt;/Links&gt;
+
+	&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Помощь&lt;/p&gt;
+	&lt;Links&gt;
+		&lt;a To="/inst"&gt;Инструкции - по названию&lt;/a&gt;
+		&lt;a To="/instd"&gt;Инструкции - по описанию&lt;/a&gt;
+		&lt;a To="/converter"&gt;Конвертер&lt;/a&gt;
+		&lt;a To="/about"&gt;О программе&lt;/a&gt;
+	&lt;/Links&gt;
+
+	&lt;!-- Страница описания синтаксиса --&gt;
+	&lt;Page Title="Синтаксис" Address="syntax"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+		&lt;p&gt;В основном, синтаксис эмулятора практически не отличается от синтаксиса "взрослых" ассемблеров, таких как TASM, FASM, MASM и др. Каждая строка программы на данном языке подходит под следующий шаблон:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;[.метка] инструкция [аргумент[, аргумент]] [; комментарий]&lt;/p&gt;
+		&lt;p&gt;В квадратных скобках указаны необязательные части строки. Таким образом, строка делится на метку, инструкцию, операторы и комментарий.&lt;/p&gt;
+		&lt;p&gt;Метка используется для перехода к любой строке. Подробнее о метках написано на отдельной странице.&lt;/p&gt;
+		&lt;p&gt;Инструкция - можно сказать самая главная часть всего языка. Она обозначает некоторое действие, которое должен выполнить наш процессор. Для входных и выходных данных инструкции используются аргументы.&lt;/p&gt;
+		&lt;p&gt;Аргументы представляют собой числа, имена регистров или ссылки на метки. В зависимости от инструкции, количество аргументов может варьироваться и является фиксированным для данной инструкции, таким образом мы не можем, например, в инструкцию add передать три аргумента вместо двух - интерпретатор выведет ошибку.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/calls"&gt;Далее - Инструкции&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Инструкции --&gt;
+	&lt;Page Title="Инструкции" Address="calls"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Инструкции&lt;/p&gt;
+		&lt;p&gt;Для выполнения каких-либо действий используются инструкции. Так как всё лучше объясняется наглядно, приведем пример перемещения значения из одного регистра в другой:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;mov R1, R2&lt;/p&gt;
+		&lt;p&gt;Таким образом, сначала указывается имя выполняемой инструкции - в нашем случае это инструкция mov. Далее, через запятую указываются аргументы - в примере это имена регистров, R1 и R2 (их имена можно увидеть справа на панели данных).&lt;/p&gt;
+		&lt;p&gt;При необходимости, на строку можно добавить комментарий. Для этого, ставится символ точки с запятой (;) или же символ диеза (#), после чего всё содержимое строки, следующее за любым из этих символов, игнорируется.&lt;/p&gt;
+		&lt;p&gt;Также, для наглядности можно рассмотреть другой пример - инструкция завершения работы программы:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;end    ; Конец программы&lt;/p&gt;
+		&lt;p&gt;Видно, что команда не имеет аргументов, и их следует просто-напросто не указывать.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/regs"&gt;Далее - Регистры&lt;/a&gt;
+			&lt;a To="/syntax"&gt;Назад - Синтаксис&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Регистры --&gt;
+	&lt;Page Title="Регистры" Address="regs"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Регистры&lt;/p&gt;
+		&lt;p&gt;Одним из самых важных частей процессора, помимо инструкций, являются регистры. Если вы знакомы с языками программирования или же просто с математикой, их можно назвать другим словом - переменные. Разница лишь в том, что их количество фиксировано и их имена предопределены, что не позволяет нам создавать новые регистры под свои нужды.&lt;/p&gt;
+		&lt;p&gt;Несмотря на то, что настоящие процессоры имеют всего 4 основных регистра (EAX, EBX, ECX, EDX), наш вымышленный процессор поддерживает 7 обычных регистров и 2 регистра ввода-вывода. Значения всех регистров можно увидеть на странице "Данные" в правой части редактора. Кроме того, если выполнение находится на паузе, значение любого из регистров можно изменить двойным кликом.&lt;/p&gt;
+		&lt;p&gt;Все регистры учебного процессора имеют псевдонимы для удобства работы с ними. Для каждого регистра есть псевдоним Rn, где n - номер регистра, от 1 до 9 (получаем R1, R2, R6 и т.д.) Кроме того, имеются псевдонимы в виде регистров настоящих процессоров (то бишь EAX, EBX, EDX - EnX с порядковой буквой вместо n).&lt;/p&gt;
+		&lt;p&gt;Регистры R8 и R9 также имеют псевдонимы IN и OUT, так как они являются связующим звеном для работы с памятью.&lt;/p&gt;
+		&lt;p Style="Bold"&gt;Регистр IN недоступен для записи, любые попытки присвоения в данный регистр вызовут ошибку!&lt;/p&gt;
+		&lt;p&gt;Связано это с тем, что в данный регистр будут поступать данные из ячеек памяти при запросе на её чтение. Регистр OUT отвечает за то значение, которое будет занесено в память при запросе записи.&lt;/p&gt;
+		&lt;p&gt;Самой частой инструкцией по работе с регистрами является команда mov - она копирует значение из одного регистра в другой.&lt;/p&gt;
+		&lt;p&gt;Также, следует напомнить, что при старте и при завершении программы, все регистры обнуляются, следовательно несохранённые данные будут потеряны.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/memory"&gt;Далее - Память&lt;/a&gt;
+			&lt;a To="/calls"&gt;Назад - Инструкции&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Память --&gt;
+	&lt;Page Title="Память" Address="memory"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Память&lt;/p&gt;
+		&lt;p&gt;Вы сочтёте меня сумасшедшим, но если меня спросят, что же всё-таки самое главное в процессоре - я смело отвечу, что память и ввод-вывод. Ведь это именно то, что реализует ключевой аспект работы любого оборудования - коммуникацию с пользователем.&lt;/p&gt;
+		&lt;p&gt;Для работы с памятью процессор имеет 2 команды (если быть честным, то 4, но об этом ниже) - write и read. Нетрудно догадаться, что первая из них записывает значение в память, другая же читает, однако всё не так просто.&lt;/p&gt;
+		&lt;p&gt;Первое, что должна сделать программа - получить входные данные от пользователя, а именно использовать команду read с одним аргументом - номером ячейки памяти для чтения:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;read 5&lt;/p&gt;
+		&lt;p&gt;Данная операция присвоит в регистр IN значение из ячейки памяти 5.&lt;/p&gt;
+		&lt;p Style="Bold"&gt;Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!&lt;/p&gt;
+		&lt;p&gt;Для реализации записи в память существует инструкция write, которая отличается лишь тем, что работает с регистром OUT. Любое значение, находящееся в регистре OUT, будет занесено в ячейку памяти, указанную в виде номерного аргумента.&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;inc R1[n]mov R1, OUT[n]write 7&lt;/p&gt;
+		&lt;p&gt;Данный код запишет запишет единицу в ячейку памяти под номером 7.&lt;/p&gt;
+		&lt;p&gt;Как было сказано выше, существуют ещё две команды - peek и poke, которые вместо конкретного номера ячейки принимают регистр, содержащий в себе индекс требуемой ячейки (от 1 до 99, иначе будет выдана ошибка).&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/labels"&gt;Далее - Метки&lt;/a&gt;
+			&lt;a To="/regs"&gt;Назад - Регистры&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Метки --&gt;
+	&lt;Page Title="Метки" Address="labels"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Метки и переходы&lt;/p&gt;
+		&lt;p&gt;Все программы были бы достаточно простыми и прямолинейными, если бы не "прыжки" по меткам в коде. Если говорить кратко, то метка - это что-то вроде книжной закладки между инструкциями, которая позволяет совершить переход к инструкции, следующей сразу за ней.&lt;/p&gt;
+		&lt;p&gt;Для того, чтобы объявить метку, требуется просто поставить точку (.), после чего, без пробелов и посторонних знаков, написать её имя латинскими буквами. Следует помнить, что компилятор является регистронезависимым, поэтому&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;.label[n].LABEL[n].LaBeL&lt;/p&gt;
+		&lt;p&gt;являются одной и той же меткой, следовательно, Вы получите ошибку, гласящую о том, что данное имя метки уже было использовано ранее.&lt;/p&gt;
+		&lt;p&gt;Для перехода по меткам используются две инструкции - безусловная ( jmp ) и условная ( jif ). Для того, чтобы указать метку для перехода, необходимо написать знак собаки (@), и далее имя метки без точки. Таким образом, чтобы совершить переход на указанную метку, мы должны написать:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;.label[n]jmp @label&lt;/p&gt;
+		&lt;p&gt;Закроем глаза на то, что это образует бесконечный цикл, ведь нам главное понять принцип работы меток и переходов. Как видно из примера, как только интерпретатор встречает команду jmp, он сразу же переходит к инструкции, следующей после указанной метки.&lt;/p&gt;
+		&lt;p&gt;Если же вспомнить про оператор условного перехода jif, то его отличие от jmp только в том, что он совершает прыжок только в том случае, если в регистре R1 (или EAX, или REG1, как удобнее Вам, ведь по сути это один и тот же первый регистр), находится значение больше нуля. &lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;inc R1[n]inc R1[n].label[n]dec R1[n]jif @label&lt;/p&gt;
+		&lt;p&gt;В первом проходе данного примера jif сработает, так как после декремента в R1 окажется единица, а вот второй раз уже нет, так как декремент снизит R1 с единицы до нуля.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/flow"&gt;Далее - Управление выполнением&lt;/a&gt;
+			&lt;a To="/memory"&gt;Назад - Память&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Управление выполнением --&gt;
+	&lt;Page Title="Управление выполнением" Address="flow"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Управление выполнением&lt;/p&gt;
+		&lt;p&gt;Данная секция не такая обширная и интересная, как остальные, так как назначение её инструкций достаточно примитивное. Первая из них - end. Эта инструкция заставляет интерпретатор немедленно прекратить выполнение программы. Если она встретится в программе без логического ветвления, всё, что находится после неё, будет фактически проигнорировано.&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;inc R1  ; Инкремент выполнится[n]end[n]inc R1  ; Инкремент не сработает&lt;/p&gt;
+		&lt;p&gt;Другая же инструкция из данной категории - инструкция brk. Она, как и end, не принимает параметров, но когда интерпретатор доходит до неё, вместо прекращения выполнения он ставит паузу, что позволяет посмотреть или изменить значения регистров, стека и памяти.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/math"&gt;Далее - Математика&lt;/a&gt;
+			&lt;a To="/labels"&gt;Назад - Метки&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Математика --&gt;
+	&lt;Page Title="Математика" Address="math"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Математика&lt;/p&gt;
+		&lt;p Size="8" Color="Gray" Style="Italic"&gt;Один из самых больших разделов инструкций, второй - логика&lt;/p&gt;
+		&lt;p&gt;Математика - царица наук, и по совместительству главная задача любой вычислительной машины. Наш процессор - не исключение, поэтому он реализует огромное количество математических инструкций, исключая только разве что геометрические функции, как например взятие синуса или косинуса.&lt;/p&gt;
+		&lt;p&gt;Большая часть математических инструкций принимают два регистра, производят необходимую операцию, и записывают результат в регистр, идущий первым в списке аргументов:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;read 1[n]mov IN, R4[n]read 2[n]mov IN, R5[n]add R4, R5&lt;/p&gt;
+		&lt;p&gt;Эта простая программа прочитает данные из двух ячеек памяти, переместит значения в регистры R4 и R5, и после произведет сложение указанных регистров, сохранив результат в регистр R4, так как он указан первым.&lt;/p&gt;
+		&lt;p&gt;С унарными же операциями всё гораздо проще - они принимают один регистр, и результат записывают в него же. Таким образом, знакомая нам по ранее приведенным примерам, инструкция inc как раз-таки является простейшей математической инструкцией, прибавляющей единицу к значению указанному регистру, сохраняя результат в него же.&lt;/p&gt;
+		
+		&lt;p&gt;Подробнее со всеми доступными математическими инстркциями можно ознакомиться в перечнях инструкций:&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst"&gt;Инструкции - по названию&lt;/a&gt;
+			&lt;a To="/instd"&gt;Инструкции - по описанию&lt;/a&gt;
+		&lt;/Links&gt;
+		&lt;Links&gt;
+			&lt;a To="/logic"&gt;Далее - Логика&lt;/a&gt;
+			&lt;a To="/flow"&gt;Назад - Управление выполнением&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Логика --&gt;
+	&lt;Page Title="Логика" Address="logic"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Логика&lt;/p&gt;
+		&lt;p Size="8" Color="Gray" Style="Italic"&gt;Один из самых больших разделов инструкций, второй - математика&lt;/p&gt;
+		&lt;p&gt;После простейших математических операций, наш процессор может так же сравнивать полученные результаты. Для этого существует целый ряд логически-сравнительных инструкций. Все они, как и математические, принимают в качестве параметров один или два регистра, записывая ответ в тот, что стоит первым в списке аргументов.&lt;/p&gt;
+		&lt;p&gt;Например, для того, чтобы проверить, не равны ли числа, мы используем следующую конструкцию:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;neq R3, R2&lt;/p&gt;
+		&lt;p&gt;Результат выполнения будет таков, что в регистр R3 запишется единица, если два числа в регистрах не равны, иначе же ноль.&lt;/p&gt;
+		&lt;p&gt;Унарная логическая инструкция всего одна - это инструкция not. Нетрудно догадаться, что она просто инвертирует логическое значение в регистре.&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;not R6&lt;/p&gt;
+		&lt;p&gt;Если в регистре R6 было значение больше нуля, он станет равным нулю, иначе же единице.&lt;/p&gt;
+		&lt;p&gt;Подробнее со всеми доступными математическими инстркциями можно ознакомиться в перечнях инструкций:&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst"&gt;Инструкции - по названию&lt;/a&gt;
+			&lt;a To="/instd"&gt;Инструкции - по описанию&lt;/a&gt;
+		&lt;/Links&gt;
+		&lt;Links&gt;
+			&lt;a To="/stack"&gt;Далее - Стек&lt;/a&gt;
+			&lt;a To="/math"&gt;Назад - Математика&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Стек --&gt;
+	&lt;Page Title="Стек" Address="stack"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Стек&lt;/p&gt;
+		&lt;p&gt;Как и в настоящих процессорах, в нашем имеется стек.&lt;/p&gt;
+		&lt;p&gt;Проще всего стек можно представить в виде магазина от пистолета, только вместо пуль мы "заряжаем" и извлекаем из него числа.&lt;/p&gt;
+		&lt;p&gt;Для того, чтобы занести значение регистра в стек, используется инструкция push, которая принимает только один параметр - регистр, из которого необходимо прочитать и сохранить значение:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;push R1&lt;/p&gt;
+		&lt;p&gt;Результат выполнения сразу же отобразится в списке "Стек" под значениями регистров в правой части окна эмулятора.&lt;/p&gt;
+		&lt;p&gt;Для извлечения из стека используется команда pop, которая так же принимает регистр для записи:&lt;/p&gt;
+		&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;pop R4&lt;/p&gt;
+		&lt;p&gt;Содержимое верхней ячейки извлечется в регистр R4, сократив размер стека на один.&lt;/p&gt;
+		&lt;p Style="Bold"&gt;Стек ограничен 16 ячейками, при попытке записать в него большее количество значений, интерпретатор выдаст ошибку! Также, ошибка будет выведена при попытке прочитать значение из пустого стека!&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/logic"&gt;Назад - Логика&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- Инструкции --&gt;
+	&lt;Page Title="Инструкции по названию" Address="inst"&gt;
+		
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Инструкции по названию&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/instd"&gt;К списку по описанию&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+		
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Работа с регистрами&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/mov"&gt;mov [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/inc"&gt;inc [регистр]&lt;/a&gt;
+			&lt;a To="/inst/dec"&gt;dec [регистр]&lt;/a&gt;
+			&lt;a To="/inst/one"&gt;one [регистр]&lt;/a&gt;
+			&lt;a To="/inst/nul"&gt;nul [регистр]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Ввод-вывод&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/write"&gt;write [число]&lt;/a&gt;
+			&lt;a To="/inst/read"&gt;read [число]&lt;/a&gt;
+			&lt;a To="/inst/poke"&gt;poke [регистр]&lt;/a&gt;
+			&lt;a To="/inst/peek"&gt;peek [регистр]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Переходы&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/jmp"&gt;jmp [@метка]&lt;/a&gt;
+			&lt;a To="/inst/jif"&gt;jif [@метка]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Математика&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/add"&gt;add [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/sub"&gt;sub [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/mul"&gt;mul [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/div"&gt;div [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/mod"&gt;mod [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/pow"&gt;pow [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/neg"&gt;neg [регистр]&lt;/a&gt;
+			&lt;a To="/inst/abs"&gt;abs [регистр]&lt;/a&gt;
+			&lt;a To="/inst/sgn"&gt;sgn [регистр]&lt;/a&gt;
+			&lt;a To="/inst/sqrt"&gt;sqrt [регистр]&lt;/a&gt;
+			&lt;a To="/inst/flr"&gt;flr [регистр]&lt;/a&gt;
+			&lt;a To="/inst/cel"&gt;cel [регистр]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Логика&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/eq"&gt;eq [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/neq"&gt;neq [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/grt"&gt;grt [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/lss"&gt;lss [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/geq"&gt;geq [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/leq"&gt;leq [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/and"&gt;and [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/or"&gt;or [регистр], [регистр]&lt;/a&gt;
+			&lt;a To="/inst/not"&gt;not [регистр]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Стек&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/push"&gt;push [регистр]&lt;/a&gt;
+			&lt;a To="/inst/pop"&gt;pop [регистр]&lt;/a&gt;
+		&lt;/Links&gt;
+	
+
+		&lt;!-- Инструкции регистров --&gt;
+		&lt;Page Title="mov" Address="mov"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;mov&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;mov регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Данная инструкция копирует значение из первого указанного регистра во второй.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="inc" Address="inc"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;inc&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;inc регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Данная инструкция увеличивает значение указанного регистра на единицу.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="dec" Address="dec"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;dec&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;dec регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Данная инструкция уменьшает значение указанного регистра на единицу.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="one" Address="one"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;one&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;one регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Устанавливает значение указанного регистра в единицу.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="nul" Address="nul"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;nul&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;nul регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Устанавливает значение указанного регистра в ноль.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+	
+		&lt;!-- Инструкции памяти --&gt;
+		&lt;Page Title="read" Address="read"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;read&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;read число&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Читает значение из ячейки памяти с указанным индексом в регистр IN.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="write" Address="write"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;write&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;write число&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Записывает значение из регистра OUT в указанную ячейку памяти.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="peek" Address="peek"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;peek&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;peek регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Читает значение из ячейки памяти, хранящейся в указанном регистре, в регистр IN.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="poke" Address="poke"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;poke&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;poke число&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Записывает значение из регистра OUT в ячейку памяти, индекс которой хранится в указанном регистре.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Номер ячейки должен находиться в пределах от 1 до 99, иначе интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+	
+		&lt;!-- Переходы --&gt;
+		&lt;Page Title="jmp" Address="jmp"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;jmp&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;jmp @метка&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Совершает безусловный переход к указанной метке.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="jif" Address="jif"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;jif&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;jif @метка&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Совершает переход к указанной метке только в том случае, если регистр R1 содержит значение больше нуля.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+	
+		&lt;!-- Математика --&gt;
+		&lt;Page Title="add" Address="add"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;add&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;add регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Производит сложение значений двух регистров, сохраняя результат в первый указанный регистр.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="sub" Address="sub"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;sub&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;sub регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Производит вычитание значений двух регистров, сохраняя результат в первый указанный регистр.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="mul" Address="mul"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;mul&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;mul регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Производит умножение значений двух регистров, сохраняя результат в первый указанный регистр.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="div" Address="div"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;div&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;div регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Производит деление одного регистра на другой, сохраняя результат в первый указанный регистр.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Если второй указанный регистр содержит нулевое значение, интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="mod" Address="mod"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;mod&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;mod регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Производит деление одного регистра на другой, сохраняя остаток от деления в первый указанный регистр.&lt;/p&gt;
+			&lt;p Style="Bold"&gt;Если второй указанный регистр содержит нулевое значение, интерпретатор выдаст ошибку!&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="pow" Address="pow"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;pow&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;pow регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Возводит первый регистр в степень, хранящуюся во втором регистре, сохраняя результат в первый указанный регистр.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="neg" Address="neg"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;neg&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;neg регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Меняет знак числа, хранящегося в указанном регистре, сохраняя результат в него же.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="abs" Address="abs"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;abs&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;abs регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Находит модуль числа (делает любое отрицательное число положительным), хранящегося в указанном регистре, сохраняя результат в него же.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="sgn" Address="sgn"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;sgn&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;sgn регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Вычисляет знак числа, хранящегося в указанном регистре, сохраняя результат в него же. Если в регистре число было больше или равно нулю, в регистр занесется 1, иначе -1.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="sqrt" Address="sqrt"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;sqrt&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;sqrt регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Извлекает квадратный корень из числа, хранящегося в указанном регистре, сохраняя результат в него же.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="flr" Address="flr"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;flr&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;flr регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Округляет значение регистра до целого, находящегося перед данным дробным числом (округление вниз).&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="cel" Address="cel"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;cel&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;cel регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Округляет значение регистра до целого, находящегося после данного дробного числа (округление вверх).&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+
+		&lt;!-- Логика --&gt;
+		&lt;Page Title="eq" Address="eq"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;eq&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;eq регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если два значения в указанных регистрах равны, устанавливает первый указанный регистр в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="neq" Address="neq"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;neq&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;neq регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если два значения в указанных регистрах не равны, устанавливает первый указанный регистр в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="grt" Address="grt"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;grt&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;grt регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если значение первого указанного регистра больше значения второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="geq" Address="geq"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;geq&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;geq регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если значение первого указанного регистра больше или равно значению второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="lss" Address="lss"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;lss&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;lss регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если значение первого указанного регистра меньше значения второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="leq" Address="leq"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;leq&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;leq регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Если значение первого указанного регистра меньше или равно значению второго указанного регистра, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="and" Address="and"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;and&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;and регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Логическое "И". Если значение обоих регистров больше нуля, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="or" Address="or"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;or&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;or регистр, регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Логическое "ИЛИ". Если значение любого из указанных регистров больше нуля, первый указанный регистр устанавливается в 1, иначе в 0.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="not" Address="not"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;not&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;not регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Логическое отрицание ("НЕ"). Если в регистре значение больше нуля, в него записывается 0, иначе 1.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		
+		&lt;!-- Стек --&gt;
+		&lt;Page Title="push" Address="push"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;push&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;push регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Заносит число, содержащееся в регистре, в стек.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+		&lt;Page Title="pop" Address="pop"&gt;
+			&lt;p Size="16" Color="MidnightBlue" Style="Bold"&gt;pop&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Синтаксис&lt;/p&gt;
+			&lt;p Font="Courier New" Size="8" Color="MidnightBlue"&gt;pop регистр&lt;/p&gt;
+			&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Описание&lt;/p&gt;
+			&lt;p&gt;Извлекает последнее занесенное в стек число и записывает его в указанный регистр.&lt;/p&gt;
+			&lt;Links&gt;
+				&lt;a To="/inst"&gt;К списку&lt;/a&gt;
+				&lt;a To="/"&gt;На главную&lt;/a&gt;
+			&lt;/Links&gt;
+		&lt;/Page&gt;
+
+	&lt;/Page&gt;
+	
+	&lt;!-- Инструкции по описанию --&gt;
+	&lt;Page Title="Инструкции по описанию" Address="instd"&gt;
+		
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Инструкции по описанию&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst"&gt;К списку по названию&lt;/a&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+		
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Работа с регистрами&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/mov"&gt;Перемещение регистр-регистр&lt;/a&gt;
+			&lt;a To="/inst/inc"&gt;Инкремент (увеличение на 1)&lt;/a&gt;
+			&lt;a To="/inst/dec"&gt;Декремент (уменьшение на 1)&lt;/a&gt;
+			&lt;a To="/inst/one"&gt;Установка регистра в единицу&lt;/a&gt;
+			&lt;a To="/inst/nul"&gt;Установка регистра в ноль&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Ввод-вывод&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/write"&gt;Запись в ячейку памяти&lt;/a&gt;
+			&lt;a To="/inst/read"&gt;Чтение из ячейки памяти&lt;/a&gt;
+			&lt;a To="/inst/poke"&gt;Запись в ячейку по адресу в регистре&lt;/a&gt;
+			&lt;a To="/inst/peek"&gt;Чтение из ячейки по адресу в регистре&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Переходы&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/jmp"&gt;Безусловный переход&lt;/a&gt;
+			&lt;a To="/inst/jif"&gt;Условный переход&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Математика&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/add"&gt;Сложение&lt;/a&gt;
+			&lt;a To="/inst/sub"&gt;Вычитание&lt;/a&gt;
+			&lt;a To="/inst/mul"&gt;Умножение&lt;/a&gt;
+			&lt;a To="/inst/div"&gt;Деление&lt;/a&gt;
+			&lt;a To="/inst/mod"&gt;Остаток от деления&lt;/a&gt;
+			&lt;a To="/inst/pow"&gt;Возведение в степень&lt;/a&gt;
+			&lt;a To="/inst/neg"&gt;Смена знака числа&lt;/a&gt;
+			&lt;a To="/inst/abs"&gt;Модуль числа&lt;/a&gt;
+			&lt;a To="/inst/sgn"&gt;Получение знака числа&lt;/a&gt;
+			&lt;a To="/inst/sqrt"&gt;Квадратный корень&lt;/a&gt;
+			&lt;a To="/inst/flr"&gt;Округление вниз&lt;/a&gt;
+			&lt;a To="/inst/cel"&gt;Округление вверх&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Логика&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/eq"&gt;Равенство значений&lt;/a&gt;
+			&lt;a To="/inst/neq"&gt;Неравенство значений&lt;/a&gt;
+			&lt;a To="/inst/grt"&gt;Больше&lt;/a&gt;
+			&lt;a To="/inst/lss"&gt;Меньше&lt;/a&gt;
+			&lt;a To="/inst/geq"&gt;Больше или равно&lt;/a&gt;
+			&lt;a To="/inst/leq"&gt;Меньше или равно&lt;/a&gt;
+			&lt;a To="/inst/and"&gt;Логическое "И"&lt;/a&gt;
+			&lt;a To="/inst/or"&gt;Логическое "ИЛИ"&lt;/a&gt;
+			&lt;a To="/inst/not"&gt;Логическое "НЕ"&lt;/a&gt;
+		&lt;/Links&gt;
+	
+		&lt;p Size="10" Color="DimGray" Style="Bold"&gt;Стек&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/inst/push"&gt;Добавление в стек&lt;/a&gt;
+			&lt;a To="/inst/pop"&gt;Извлечение из стека&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+	
+	&lt;!-- Конвертер --&gt;
+	&lt;Page Title="Конвертер" Address="converter"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;Конвертер&lt;/p&gt;
+		&lt;p&gt;Простой инструмент, который поможет сконвертировать трёхциферные коды от старой программы в ассемблерные коды.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+
+	&lt;!-- О программе --&gt;
+	&lt;Page Title="О программе" Address="about"&gt;
+		&lt;p Size="12" Color="DimGray" Style="Bold"&gt;О программе&lt;/p&gt;
+		&lt;p Style="Bold"&gt;Разработка программы:&lt;/p&gt;
+		&lt;p&gt;студент группы ИСа-151[n]Попов Михаил&lt;/p&gt;
+		&lt;p&gt;&lt;/p&gt;
+		&lt;p&gt;Программа написана на языке C# в декабре 2016 года. Все исходные коды программы можно найти в репозитории на сайте GitHub:&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="https://github.com/clashbyte/emucpu"&gt;Репозиторий на GitHub&lt;/a&gt;
+		&lt;/Links&gt;
+		&lt;p&gt;Разработано под чутким руководством Евгения Ивановича Коденцева и Юрия Петровича Преображенского, преподавателей Воронежского института высоких технологий.&lt;/p&gt;
+		&lt;Links&gt;
+			&lt;a To="/"&gt;На главную&lt;/a&gt;
+		&lt;/Links&gt;
+	&lt;/Page&gt;
+&lt;/Page&gt;</value>
+  </data>
+</root>
