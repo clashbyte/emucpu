@@ -205,7 +205,11 @@ namespace EmuCPU.Lang {
 							} catch (Exception ex) {
 								Pause();
 								Pointer++;
-								return new Error(ex.Message, inv.CallingInstruction.Position, inv.CallingInstruction.Length);
+								if (System.Diagnostics.Debugger.IsAttached) {
+									return new Error(ex.ToString(), inv.CallingInstruction.Position, inv.CallingInstruction.Length);
+								} else {
+									return new Error(ex.Message, inv.CallingInstruction.Position, inv.CallingInstruction.Length);
+								}	
 							}
 							Pointer++;
 							if (State != mst) {

@@ -23,5 +23,12 @@ namespace EmuCPU.Lang.Operands {
 			Index = idx;
 		}
 
+		/// <summary>
+		/// Смена адреса
+		/// </summary>
+		/// <param name="idx">Индекс команды</param>
+		public void Relocate(int idx) {
+			Index = idx;
+		}
 	}
 }

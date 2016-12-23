@@ -120,7 +120,8 @@ namespace EmuCPU.Lang {
 			List<Error> errors = new List<Error>();
 			List<Label> labels = new List<Label>();
 			List<Invocation> invocs = new List<Invocation>();
-			HashSet<string> labelNames = new HashSet<string>(); 
+			HashSet<string> labelNames = new HashSet<string>();
+			Dictionary<AddressOperand, string> promises = new Dictionary<AddressOperand, string>();
 
 			// Токенизация
 			TokenCollection tokens = Tokenize(code);
@@ -251,18 +252,13 @@ namespace EmuCPU.Lang {
 											// Поиск регистра
 											ops.Add(new RegisterOperand(RegisterNameToIndex(tt.Content)));
 										} else if (opType == typeof(AddressOperand)) {
-											// Поиск адреса для прыжка
-											int addr = -1;
-											foreach (Label l in labels) {
-												if (l.Name == tt.Content) {
-													addr = l.Location;
-													break;
-												}
-											}
-											if (addr >= 0) {
-												ops.Add(new AddressOperand(addr));
+											// Сохранение обещания для прыжка
+											if (labelNames.Contains(tt.Content.ToLower())) {
+												AddressOperand ao = new AddressOperand(-1);
+												ops.Add(ao);
+												promises.Add(ao, tt.Content.ToLower());
 											} else {
-												errors.Add(new Error("Не найдена указанная метка: "+tt.Content, tt.Start, tt.Length));
+												errors.Add(new Error("Не найдена указанная метка: " + tt.Content, tt.Start, tt.Length));
 											}
 										}
 									}
@@ -361,6 +357,19 @@ namespace EmuCPU.Lang {
 				}
 			}
 
+			// Обновление меток по обещаниям
+			foreach (KeyValuePair<AddressOperand, string> p in promises) {
+				foreach (Label l in labels) {
+					if (l.Name.ToLower() == p.Value) {
+						p.Key.Relocate(l.Location);
+						break;
+					}
+				}
+				if (p.Key.Index == -1) {
+					errors.Add(new Error("Не найдена метка "+p.Value, 0, 0));
+				}
+			}
+
 			// Создание объекта кода
 			if (errors.Count > 0) {
 				return new CompiledCode(errors.ToArray());
@@ -382,7 +391,7 @@ namespace EmuCPU.Lang {
 			List<Token> tokens = new List<Token>();
 			HashSet<string> keys = new HashSet<string>(GetInstructions().ToLower().Split(' '));
 			HashSet<string> regs = new HashSet<string>(GetRegisters().ToLower().Split(' '));
-
+			
 			// Переменные, как и в лексере
 			int p = 0;
 			int max = text.Length;
